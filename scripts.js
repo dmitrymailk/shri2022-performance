@@ -4,7 +4,7 @@ function bind(nodes, event, handler) {
     });
 }
 
-function makeTabs(node) {
+async function makeTabs(node) {
     let selected = node.querySelector('.section__tab_active').dataset.id;
     const tabs = node.querySelectorAll('.section__tab');
     const list = Array.from(tabs).map(node => node.dataset.id);
@@ -78,7 +78,7 @@ function makeTabs(node) {
     });
 }
 
-function makeMenu(node) {
+async function makeMenu(node) {
     let expanded = false;
     const links = document.querySelector('.header__links');
 
@@ -92,6 +92,6 @@ function makeMenu(node) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    Array.from(document.querySelectorAll('.main__devices')).forEach(makeTabs);
-    Array.from(document.querySelectorAll('.header__menu')).forEach(makeMenu);
+    makeTabs(document.querySelector('.main__devices'));
+    makeMenu(document.querySelector('.header__menu'));
 });
