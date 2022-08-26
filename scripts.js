@@ -4,7 +4,7 @@ function bind(nodes, event, handler) {
     });
 }
 
-async function makeTabs(node) {
+function makeTabs(node) {
     let selected = node.querySelector('.section__tab_active').dataset.id;
     const tabs = node.querySelectorAll('.section__tab');
     const list = Array.from(tabs).map(node => node.dataset.id);
@@ -78,7 +78,7 @@ async function makeTabs(node) {
     });
 }
 
-async function makeMenu(node) {
+function makeMenu(node) {
     let expanded = false;
     const links = document.querySelector('.header__links');
 
